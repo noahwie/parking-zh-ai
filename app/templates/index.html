@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Zurich Parking Availability{% endblock %}
+
+{% block content %}
+  <header class="header">
+    <h1>Zurich parking availability</h1>
+    <p class="sub">Live data from pls-zh.ch (RSS). Auto-refreshes every 15 seconds.</p>
+  </header>
+
+  <section class="card">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Parking lot</th>
+          <th>Status</th>
+          <th>Free spots</th>
+          <th>Updated (UTC)</th>
+        </tr>
+      </thead>
+
+      <tbody
+        id="parking-tbody"
+        hx-get="/fragment/parkinglots"
+        hx-trigger="load, every 15s"
+        hx-swap="outerHTML"
+      >
+        {% include "_table.html" %}
+      </tbody>
+    </table>
+  </section>
+{% endblock %}

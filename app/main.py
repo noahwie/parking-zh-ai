@@ -25,15 +25,9 @@ def index(request: Request):
         },
     )
 
-
-@app.get("/fragment/parkinglots", response_class=HTMLResponse)
+@app.get("/fragment/parkinglots")
 def fragment_parkinglots(request: Request):
-    lots = cache.get()
-    # returns only the table body/fragment
-    return templates.TemplateResponse(
-        "_table.html",
-        {
-            "request": request,
-            "lots": lots,
-        },
-    )
+    return templates.TemplateResponse("_table.html", {
+        "request": request,
+        "lots": cache.get()
+    })

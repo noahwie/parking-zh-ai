@@ -22,7 +22,7 @@
         id="parking-tbody"
         hx-get="/fragment/parkinglots"
         hx-trigger="load, every 15s"
-        hx-swap="outerHTML"
+        hx-swap="innerHTML"
       >
         {% include "_table.html" %}
       </tbody>

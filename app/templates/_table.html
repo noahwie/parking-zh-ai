@@ -1,32 +1,35 @@
-<tbody id="parking-tbody">
-  {% for lot in lots %}
-    <tr class="{% if lot.status != 'open' %}muted{% endif %}">
-      <td>
-        <a href="{{ lot.link }}" target="_blank" rel="noreferrer">{{ lot.name }}</a>
-      </td>
-      <td>
-        {% if lot.status == "open" %}
-          <span class="badge ok">open</span>
-        {% elif lot.status == "unknown" %}
-          <span class="badge warn">unknown</span>
-        {% else %}
-          <span class="badge bad">{{ lot.status }}</span>
-        {% endif %}
-      </td>
-      <td>
-        {% if lot.free_spaces is none %}
-          —
-        {% else %}
-          {{ lot.free_spaces }}
-        {% endif %}
-      </td>
-      <td>
-        {% if lot.updated_at is none %}
-          —
-        {% else %}
-          {{ lot.updated_at.strftime("%Y-%m-%d %H:%M:%S") }}
-        {% endif %}
-      </td>
-    </tr>
-  {% endfor %}
-</tbody>
+{% for lot in lots %}
+<tr class="{% if lot.status != 'open' %}muted{% endif %}">
+  <td>
+    <a href="{{ lot.link }}" target="_blank" rel="noreferrer">
+      {{ lot.name }}
+    </a>
+  </td>
+
+  <td>
+    {% if lot.status == "open" %}
+      <span class="badge ok">open</span>
+    {% elif lot.status == "unknown" %}
+      <span class="badge warn">unknown</span>
+    {% else %}
+      <span class="badge bad">{{ lot.status }}</span>
+    {% endif %}
+  </td>
+
+  <td>
+    {% if lot.free_spaces is none %}
+      —
+    {% else %}
+      {{ lot.free_spaces }}
+    {% endif %}
+  </td>
+
+  <td>
+    {% if lot.updated_at %}
+      {{ lot.updated_at.strftime("%Y-%m-%d %H:%M:%S") }}
+    {% else %}
+      —
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}

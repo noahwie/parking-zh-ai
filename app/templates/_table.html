@@ -1,6 +1,7 @@
 {% for lot in lots %}
 <tr class="{% if lot.status != 'open' %}muted{% endif %}">
   <td>
+    <i class="fa-solid fa-location-dot"></i>
     <a href="{{ lot.link }}" target="_blank" rel="noreferrer">
       {{ lot.name }}
     </a>

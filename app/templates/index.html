@@ -3,7 +3,7 @@
 
 {% block content %}
   <header class="header">
-    <h1>Zurich parking availability</h1>
+    <h1 class="zurich">Zurich</h1> <h1 class="availability">parking availability</h1>
     <p class="sub">Live data from pls-zh.ch (RSS). Auto-refreshes every 15 seconds.</p>
   </header>
 
@@ -23,6 +23,7 @@
         hx-get="/fragment/parkinglots"
         hx-trigger="load, every 15s"
         hx-swap="innerHTML"
+        class="tbody"
       >
         {% include "_table.html" %}
       </tbody>

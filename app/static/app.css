@@ -1,3 +1,4 @@
+html body { background-color: rgb(22, 26, 33); }
 :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background-color: rgb(22, 26, 33);}
 .container { max-width: 980px; margin: 24px auto; padding: 0 16px; }
 .header h1 { margin: 0 0 4px 0; }
@@ -6,18 +7,48 @@
 .sub { margin: 0 0 16px 0; opacity: 0.75; }
 p {color: white}
 
-.card { border: 1px solid rgba(39, 44, 53, 1); border-radius: 12px; overflow: hidden;  }
 .table { width: 100%; border-collapse: collapse; }
-td { color: white; padding: 12px 10px; border-bottom: 1px solid rgba(39, 44, 53, 1); }
-th { color: rgba(28, 210, 221, 1); padding: 12px 10px; border-bottom: 1px solid rgba(39, 44, 53, 1); }
+td { color: white; padding: 12px 10px; }
+th { color: rgba(28, 210, 221, 1); padding: 12px 10px;  }
 
-th { text-align: left; background: rgb(38, 52, 65); font-weight: 600; }
+th { text-align: left; background: rgb(38, 52, 65); font-weight: 600; margin: 0;}
 tr { background-color: rgb(5, 15, 35); }
 a { color: inherit; text-decoration: none;}
+a:hover { color: rgba(28, 210, 221, 1); text-shadow: 0 0 10px rgba(28, 211, 221, 0.363);}
 i { color: rgba(28, 210, 221, 1);}
 .badge { padding: 3px 8px; border-radius: 999px; font-size: 12px; }
 .badge.ok { background: rgba(40, 189, 108, 1); }
 .badge.warn { background: rgba(245, 176, 14, 1); }
 .badge.bad { background: rgba(222, 56, 56, 1); }
+.card-subtitle { font-weight: 500; color: rgba(28, 210, 221, 1);}
 
 .muted { opacity: 0.7; }
+
+table tbody {
+    display: grid;
+}
+
+table thead {
+    display: none;
+}
+
+table td {
+    display:block;
+}
+
+table tbody {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+table, tr {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px){
+    table tbody {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+} 

@@ -18,6 +18,7 @@
   </td>
 
   <td>
+    <p class="card-subtitle">Free spots</p>
     {% if lot.free_spaces is none %}
       —
     {% else %}
@@ -26,6 +27,7 @@
   </td>
 
   <td>
+    <p class="card-subtitle">Updated last</p>
     {% if lot.updated_at %}
       {{ lot.updated_at.strftime("%Y-%m-%d %H:%M:%S") }}
     {% else %}

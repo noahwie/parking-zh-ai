@@ -1,21 +1,23 @@
 html body { background-color: rgb(22, 26, 33); }
 :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background-color: rgb(22, 26, 33);}
 .container { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+
+.standort { color: rgba(28, 211, 221, 0.5); margin-left: 5px;}
 .header h1 { margin: 0 0 4px 0; }
 .zurich{color: rgba(34, 195, 187, 1);}
-.availability {color: white;}
+h1 {color: white;}
 .sub { margin: 0 0 16px 0; opacity: 0.75; }
 p {color: white}
 
 .table { width: 100%; border-collapse: collapse; }
-td { color: white; padding: 12px 10px; }
+td { color: white; padding: 6px 10px; }
 th { color: rgba(28, 210, 221, 1); padding: 12px 10px;  }
 
 th { text-align: left; background: rgb(38, 52, 65); font-weight: 600; margin: 0;}
-tr { background-color: rgb(5, 15, 35); }
+tr {  background-color:rgb(5, 15, 35); }
 a { color: inherit; text-decoration: none;}
 a:hover { color: rgba(28, 210, 221, 1); text-shadow: 0 0 10px rgba(28, 211, 221, 0.363);}
-i { color: rgba(28, 210, 221, 1);}
+i { color: rgba(28, 210, 221, 0.5);}
 .badge { padding: 3px 8px; border-radius: 999px; font-size: 12px; }
 .badge.ok { background: rgba(40, 189, 108, 1); }
 .badge.warn { background: rgba(245, 176, 14, 1); }

@@ -7,15 +7,20 @@
     </a>
   </td>
 
-  <td>
-    {% if lot.status == "open" %}
-      <span class="badge ok">open</span>
-    {% elif lot.status == "unknown" %}
-      <span class="badge warn">unknown</span>
-    {% else %}
-      <span class="badge bad">{{ lot.status }}</span>
-    {% endif %}
-  </td>
+<td>
+  {% if lot.free_spaces == 0 %}
+    <span class="badge bad">full</span>
+
+  {% elif lot.status == "open" %}
+    <span class="badge ok">open</span>
+
+  {% elif lot.status == "unknown" %}
+    <span class="badge warn">unknown</span>
+
+  {% else %}
+    <span class="badge bad">full</span>
+  {% endif %}
+</td>
 
   <td>
     <p class="card-subtitle">Free spots</p>
